@@ -1,4 +1,8 @@
 PoetrySlam::Application.routes.draw do
+  get "sessions/new"
+
+  get "masters/new"
+
   resources :poets
 
 
