@@ -7,8 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div id="container">
+  <div class="master_nav">
+   <% if current_user %>
+     Logged in as <%= current_user.email %>.
+     <%= link_to "Log out", logout_path %>
+   <% else %>
+     <%= link_to "Sign up", signup_path %> or
+     <%= link_to "Log in", login_path  %>.
+   <% end %>
+  </div>
+  <div id="content">
+    <%= yield %>
+  </div>
+</div>
 </body>
 </html>
