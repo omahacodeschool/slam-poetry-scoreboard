@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Master:</b>
+  <%= @slam.master_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @slam.name %>
+</p>
+
+<p>
+  <b>Event date:</b>
+  <%= @slam.event_date %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @slam.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_slam_path(@slam) %> |
+<%= link_to 'Back', slams_path %>
