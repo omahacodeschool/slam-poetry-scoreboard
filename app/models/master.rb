@@ -1,4 +1,6 @@
 class Master < ActiveRecord::Base
+  has_many :slams
+  
   authenticates_with_sorcery!
   attr_accessible :email, :password, :password_confirmation
   
@@ -6,5 +8,4 @@ class Master < ActiveRecord::Base
   validates_presence_of :password, :on => :create
   validates_presence_of :email
   validates_uniqueness_of :email
-
 end
