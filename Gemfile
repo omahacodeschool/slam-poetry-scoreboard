@@ -7,6 +7,8 @@ gem 'rails', '3.2.19'
 
 gem 'pg'
 
+gem 'pry-rails', :group => :development
+gem 'sorcery', '0.7.4'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,7 +31,7 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
