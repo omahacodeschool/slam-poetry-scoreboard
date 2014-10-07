@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Round:</b>
+  <%= @performance.round_id %>
+</p>
+
+<p>
+  <b>Poet:</b>
+  <%= @performance.poet_id %>
+</p>
+
+<p>
+  <b>Score1:</b>
+  <%= @performance.score1 %>
+</p>
+
+<p>
+  <b>Score2:</b>
+  <%= @performance.score2 %>
+</p>
+
+<p>
+  <b>Score3:</b>
+  <%= @performance.score3 %>
+</p>
+
+<p>
+  <b>Score4:</b>
+  <%= @performance.score4 %>
+</p>
+
+<p>
+  <b>Score5:</b>
+  <%= @performance.score5 %>
+</p>
+
+
+<%= link_to 'Edit', edit_performance_path(@performance) %> |
+<%= link_to 'Back', performances_path %>
