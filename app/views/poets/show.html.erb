@@ -7,7 +7,7 @@
 
 <p>
   <b>Photo:</b>
-  <%= @poet.photo %>
+  <%= image_tag(@poet.photo_url) if @poet.photo?%>
 </p>
 
 
