@@ -1,4 +1,7 @@
 PoetrySlam::Application.routes.draw do
+  resources :rounds
+
+
   resources :slams
 
 

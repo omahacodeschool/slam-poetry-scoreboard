@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141007182019) do
+ActiveRecord::Schema.define(:version => 20141007182119) do
+
+  create_table "rounds", :force => true do |t|
+    t.integer  "slam_id"
+    t.integer  "round_number"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "slams", :force => true do |t|
     t.integer  "master_id"
