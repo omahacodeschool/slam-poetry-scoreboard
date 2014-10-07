@@ -1,8 +1,8 @@
 PoetrySlam::Application.routes.draw do
-  get "sessions/new" => 'sessions#new'
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "masters#new", :as => "signup"
 
-  get "masters/new" => 'masters#new'
-
-  resources :poets, :performances, :rounds, :slams
+  resources :poets, :performances, :rounds, :slams, :sessions, :masters
 
 end
