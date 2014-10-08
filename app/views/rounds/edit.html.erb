@@ -1,4 +1,4 @@
-<h1>Editing round</h1>
+<h1>Adding Poets to First Round</h1>
 
 <%= form_for(@round) do |f| %>
   <% if @round.errors.any? %>
@@ -12,23 +12,12 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :slam_id %><br />
-    <%= f.number_field :slam_id %>
-  </div>
-  <div class="field">
-    <%= f.label :round_number %><br />
-    <%= f.number_field :round_number %>
-  </div>
-  <%= f.fields_for :performance do |p| %>
-    <li>
-      <% @poets.each do |poet| %>
-        <%= p.label poet.name %>
-        <%= p.check_box poet.id %>
-      <% end %>
-    </li>
+  
+  <% @poets.each do |p| %>
+    <%= check_box_tag "round[poet][]", p.id %>
+    <%= label_tag "round_poet", p.name %>
   <% end %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

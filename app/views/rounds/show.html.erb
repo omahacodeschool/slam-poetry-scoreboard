@@ -10,8 +10,8 @@
   <%= @round.round_number %>
 </p>
 
-<% @poets.each do |p| %>
-<p><%= p %></p>
+<% @round.performances.each do |p| %>
+<p><%= p.poet.name %></p>
 <% end %>
 
 <%= link_to 'Edit', edit_round_path(@round) %> |
