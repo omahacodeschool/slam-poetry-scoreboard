@@ -46,8 +46,8 @@ class SlamsController < ApplicationController
     respond_to do |format|
       if @slam.save
         @round1 = Round.create(round_number: 1, slam_id: @slam.id)
-        binding.pry
-        format.html { redirect_to @slam, notice: 'Slam was successfully created.' }
+        
+        format.html { redirect_to edit_round_path(@round1), notice: 'Slam was successfully created.' }
         format.json { render json: @slam, status: :created, location: @slam }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class SlamsController < ApplicationController
   # PUT /slams/1.json
   def update
     @slam = Slam.find(params[:id])
-
+    
     respond_to do |format|
       if @slam.update_attributes(params[:slam])
         format.html { redirect_to @slam, notice: 'Slam was successfully updated.' }

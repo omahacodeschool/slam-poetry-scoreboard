@@ -1,6 +1,38 @@
 <h1>Editing round</h1>
 
-<%= render 'form' %>
+<%= form_for(@round) do |f| %>
+  <% if @round.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@round.errors.count, "error") %> prohibited this round from being saved:</h2>
+
+      <ul>
+      <% @round.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :slam_id %><br />
+    <%= f.number_field :slam_id %>
+  </div>
+  <div class="field">
+    <%= f.label :round_number %><br />
+    <%= f.number_field :round_number %>
+  </div>
+  <%= f.fields_for :performance do |p| %>
+    <li>
+      <% @poets.each do |poet| %>
+        <%= p.label poet.name %>
+        <%= p.check_box poet.name, :value => poet.id %>
+      <% end %>
+    </li>
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Show', @round %> |
 <%= link_to 'Back', rounds_path %>

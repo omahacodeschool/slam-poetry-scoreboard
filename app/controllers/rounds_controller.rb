@@ -2,6 +2,7 @@ class RoundsController < ApplicationController
   # GET /rounds
   # GET /rounds.json
   def index
+    binding.pry
     @rounds = Round.all
 
     respond_to do |format|
@@ -14,11 +15,7 @@ class RoundsController < ApplicationController
   # GET /rounds/1.json
   def show
     @round = Round.find(params[:id])
-    @poets = []
-    @round.performances.each do |p|
-      @poets << p.poet.name
-    end
-    
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @round }
@@ -39,6 +36,8 @@ class RoundsController < ApplicationController
   # GET /rounds/1/edit
   def edit
     @round = Round.find(params[:id])
+    @poets = Poet.all
+    @round.performances.build
   end
 
   # POST /rounds
@@ -64,6 +63,8 @@ class RoundsController < ApplicationController
 
     respond_to do |format|
       if @round.update_attributes(params[:round])
+        #LOOP THROUGH
+        # Performance.create(:round_id => @round.id, :poet_id => (params[:poet_id]))
         format.html { redirect_to @round, notice: 'Round was successfully updated.' }
         format.json { head :no_content }
       else
