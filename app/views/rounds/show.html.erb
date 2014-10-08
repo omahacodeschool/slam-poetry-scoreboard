@@ -2,7 +2,7 @@
 
 <p>
   <b>Slam:</b>
-  <%= @round.slam_id %>
+  <%= @round.slam.name %>
 </p>
 
 <p>
@@ -10,8 +10,11 @@
   <%= @round.round_number %>
 </p>
 
-<% @round.performances.each do |p| %>
-<p><%= p.poet.name %></p>
+<p>
+  <b>Poets Performing:</b>
+  <% @round.performances.each do |p| %>
+  <p><%= p.poet.name %></p>
+</p>
 <% end %>
 
 <%= link_to 'Edit', edit_round_path(@round) %> |
