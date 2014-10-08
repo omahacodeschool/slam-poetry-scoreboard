@@ -14,7 +14,11 @@ class RoundsController < ApplicationController
   # GET /rounds/1.json
   def show
     @round = Round.find(params[:id])
-
+    @poets = []
+    @round.performances.each do |p|
+      @poets << p.poet.name
+    end
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @round }
