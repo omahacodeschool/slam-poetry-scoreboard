@@ -1,5 +1,5 @@
 class Poet < ActiveRecord::Base
-  belongs_to :performance
-  attr_accessible :name, :photo
+  has_one :performance
+  attr_accessible :name, :photo, :performance_id
   mount_uploader :photo, PhotoUploader
 end
