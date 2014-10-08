@@ -45,6 +45,8 @@ class SlamsController < ApplicationController
 
     respond_to do |format|
       if @slam.save
+        @round1 = Round.create(round_number: 1, slam_id: @slam.id)
+        binding.pry
         format.html { redirect_to @slam, notice: 'Slam was successfully created.' }
         format.json { render json: @slam, status: :created, location: @slam }
       else
