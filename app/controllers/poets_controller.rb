@@ -1,4 +1,5 @@
 class PoetsController < ApplicationController
+  skip_before_filter :require_login, only: [:index, :new, :create]
   # GET /poets
   # GET /poets.json
   def index
@@ -13,11 +14,15 @@ class PoetsController < ApplicationController
   # GET /poets/1
   # GET /poets/1.json
   def show
-    @poet = Poet.find(params[:id])
+    if current_user
+      @poet = Poet.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @poet }
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @poet }
+      end
+    else
+      not_authenticated
     end
   end
 
