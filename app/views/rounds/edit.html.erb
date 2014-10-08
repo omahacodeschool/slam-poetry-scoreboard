@@ -25,7 +25,7 @@
     <li>
       <% @poets.each do |poet| %>
         <%= p.label poet.name %>
-        <%= p.check_box poet.name, :value => poet.id %>
+        <%= p.check_box poet.id %>
       <% end %>
     </li>
   <% end %>

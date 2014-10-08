@@ -60,10 +60,22 @@ class RoundsController < ApplicationController
   # PUT /rounds/1.json
   def update
     @round = Round.find(params[:id])
+    @round.performances.build
+    poet_hash = params[:round][:performance]
+    poet_array = []
 
     respond_to do |format|
       if @round.update_attributes(params[:round])
-        #LOOP THROUGH
+        poet_hash.each do |k, v|
+          if v == "1"
+            poet_array << k
+          end
+          poet_array
+        end
+        poet_array.each do |p|
+          Performance.create(@round_id => :round_id, p.to_i => :poet_id)
+        end
+        binding.pry
         # Performance.create(:round_id => @round.id, :poet_id => (params[:poet_id]))
         format.html { redirect_to @round, notice: 'Round was successfully updated.' }
         format.json { head :no_content }
