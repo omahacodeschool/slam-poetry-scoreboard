@@ -1,29 +1,13 @@
-<h1>Listing slams</h1>
+<div class="font-effect-anaglyph">Listing slams</div>
 
-<table>
-  <tr>
-    <th>Master</th>
-    <th>Name</th>
-    <th>Event date</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="slam"><% @slams.each do |slam| %>
+    <div class="font-effect-anaglyph"><p><%= slam.name %></p></div>
+    <p><%= slam.event_date %></p>
+    <p><%= slam.description %></p>
+    <div class="internal_link"><%= link_to 'Look', slam %>
+      <%= link_to 'Edit', edit_slam_path(slam) %>
+      <%= link_to 'Omit', slam, method: :delete, data: { confirm: 'Are you fucking kidding?' } %></div>
+  <% end %>
+</div>
 
-<% @slams.each do |slam| %>
-  <tr>
-    <td><%= slam.master_id %></td>
-    <td><%= slam.name %></td>
-    <td><%= slam.event_date %></td>
-    <td><%= slam.description %></td>
-    <td><%= link_to 'Show', slam %></td>
-    <td><%= link_to 'Edit', edit_slam_path(slam) %></td>
-    <td><%= link_to 'Destroy', slam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Slam', new_slam_path %>
+<div class="bottom_link"><%= link_to 'New Slam', new_slam_path %>

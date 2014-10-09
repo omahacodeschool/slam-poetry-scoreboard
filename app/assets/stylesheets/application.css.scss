@@ -1,0 +1,125 @@
+$special_font: Bitter, serif;
+$font: Droid Sans, sans-serif;
+$beige: #E4DED0;
+$seafoam: #ABCCBD;
+$aqua: #7DBEB8;
+$blackish: #181619;
+$red: #E32F21;
+
+
+#container {
+  background-color: $beige;
+  color: $blackish;
+  padding: 12px;
+  width: 100%;
+  height: 2000px;
+}
+
+.master_nav {
+  color: $red;
+  font: $special_font;
+  text-transform: lowercase;
+  float: right; 
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.top_link {
+  margin-top: 5px;
+  float: right;
+}
+
+.clear_float {
+  clear: both;
+}
+
+.font-effect-anaglyph {
+  font-family: $special_font;
+  font-size: xx-large;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h1 {
+  font-family: $special_font;
+  font-size: xx-large;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font: 100% $font;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.internal_link {
+  font: 75% $special_font;
+  padding: 8px;
+  margin-top: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5%;
+  text-align: center;
+  background-color: $red;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.photo {
+ border-radius: 100%; 
+ border: 10px;
+ border-color: $red;
+ margin: 0 auto;
+}
+
+.poet .slam {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  background-color: $aqua;
+}
+
+.slam {
+  background-color: $seafoam;
+  color: $blackish;
+}
+
+.field {
+  text-align: center;
+  background-color: $red;
+  color: $blackish;
+  padding: 10px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.actions {
+  text-align: center;
+  background-color: $seafoam;
+  color: $blackish;
+  width: 100%;
+  margin: 0 auto;
+}
+
+a {
+  font: 75% $special_font;
+  padding: 15px;
+  background-color: $blackish;
+  color: $aqua;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 100%;
+  text-align: center;
+  margin: 8px;
+}
+
+.bottom_link {
+  margin-bottom: 5px;
+  float: left;
+}
+
+a:hover {
+  background-color: $aqua;
+  color: $red;
+}

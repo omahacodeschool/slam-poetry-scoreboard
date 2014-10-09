@@ -1,4 +1,4 @@
-<h1>Editing slam</h1>
+<div class="font-effect-anaglyph">Edit Slam<div>
 
 <%= form_for(@slam) do |f| %>
   <% if @slam.errors.any? %>
@@ -36,5 +36,5 @@
   </div>
 <% end %>
 
-<%= link_to 'Show', @slam %> |
-<%= link_to 'Back', slams_path %>
+<div class="bottom_link"><%= link_to 'Look', @slam %></div>
+<div class="bottom_link"><%= link_to 'Back', slams_path %></div>

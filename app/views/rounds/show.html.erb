@@ -1,0 +1,22 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Slam:</b>
+  <%= @round.slam.name %>
+</p>
+
+<p>
+  <b>Round number:</b>
+  <%= @round.round_number %>
+</p>
+
+<p>
+  <b>Poets Performing:</b>
+  <% @round.performances.each do |p| %>
+  <p><%= p.poet.name %></p>
+</p>
+<% end %>
+
+<div class="bottom_link"><%= link_to 'Edit', edit_round_path(@round) %></div>
+<div class="bottom_link"><%= link_to 'Back', rounds_path %></div>

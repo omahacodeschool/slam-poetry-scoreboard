@@ -1,15 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @poet.name %>
-</p>
+<div class="poet">
+  <div class="font-effect-anaglyph"><%= @poet.name %></div>
+  <%=image_tag @poet.photo_url if @poet.photo? %>
+</div>
 
-<p>
-  <b>Photo:</b>
-  <%= image_tag(@poet.photo_url) if @poet.photo?%>
-</p>
-
-
-<%= link_to 'Edit', edit_poet_path(@poet) %> |
-<%= link_to 'Back', poets_path %>
+<div class="bottom_link"><%= link_to 'Edit', edit_poet_path(@poet) %></div> 
+<div class="bottom_link"><%= link_to 'Back', poets_path %></div>
