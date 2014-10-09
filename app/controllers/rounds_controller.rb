@@ -1,4 +1,3 @@
-<<<<<<< Local Changes
 class RoundsController < ApplicationController
   # GET /rounds
   # GET /rounds.json
