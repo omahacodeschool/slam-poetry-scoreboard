@@ -6,3 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)'
 Master.create(email:"grandmasterflash@slam.com", password:"password", password_confirmation:"password")
+
+poets = Poet.create([{ name: 'Kyle'}, {name: 'Katie'}, {name: 'Andrew'}, {name: 'Sumeet'}])

@@ -71,11 +71,11 @@ class RoundsController < ApplicationController
   def save_score
     @round = Round.find(params[:id])
     @round.update_attributes(params[:round])
+    redirect_to round_result_path(@round.id)
   end
   
   # Displays poets and scores and adds checkboxes to add poets to next round
   def round_result
-
     @round = Round.find(params[:id])
     @poets = []
     

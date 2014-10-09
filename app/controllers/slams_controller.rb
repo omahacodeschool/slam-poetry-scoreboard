@@ -25,7 +25,7 @@ class SlamsController < ApplicationController
   # GET /slams/new
   # GET /slams/new.json
   def new
-    @slam = Slam.new(master_id: current_user.id)
+    @slam = Slam.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +41,7 @@ class SlamsController < ApplicationController
   # POST /slams
   # POST /slams.json
   def create
-    @slam = Slam.new(params[:slam])
+    @slam = Slam.new(params[:slam], master_id: current_user.id)
 
     respond_to do |format|
       if @slam.save
