@@ -15,6 +15,7 @@
   <% @poets.each do |p| %>
     <%= check_box_tag "round[poet][]", p.id %>
     <%= label_tag "round_poet", p.name %>
+    binding.pry
     <%= label_tag "poet_score", p.performance.normalized_score %>
   <% end %>
   

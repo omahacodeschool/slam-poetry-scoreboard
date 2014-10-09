@@ -81,7 +81,6 @@ class RoundsController < ApplicationController
     @round.performances.each do |p|
       @poets << p.poet
     end
-    binding.pry
   end
   
   # Create new round with poets from round_results and render page to add new scores
@@ -91,7 +90,6 @@ class RoundsController < ApplicationController
     if params[:advance_round]
       binding.pry
     elsif params[:end_slam]
-      binding.pry
       redirect_to slam_path(@prevrnd.slam_id)
     end
     
