@@ -14,9 +14,7 @@ class RoundsController < ApplicationController
   # GET /rounds/1
   # GET /rounds/1.json
   def show
-    @poets = Poet.all
     @round = Round.find(params[:id])
-    @round.performances.build
 
     respond_to do |format|
       format.html # show.html.erb
@@ -59,7 +57,7 @@ class RoundsController < ApplicationController
 
   # PUT /rounds/1
   # PUT /rounds/1.json
-  def update  
+  def update
     @round = Round.find(params[:id])
     @round.assign_poets(params[:round][:poet])
     redirect_to round_path(@round.id)
@@ -75,5 +73,15 @@ class RoundsController < ApplicationController
       format.html { redirect_to rounds_url }
       format.json { head :no_content }
     end
+  end
+  
+  def score
+    @round = Round.find(params[:id])
+  end
+  
+  def save_score
+    @round = Round.find(params[:id])
+    @round.update_attributes(params[:round])
+    binding.pry
   end
 end

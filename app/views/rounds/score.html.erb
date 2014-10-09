@@ -1,0 +1,42 @@
+<%= form_for(@round, url: save_score_path(@round.id)) do |f| %>
+  <% if @round.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@round.errors.count, "error") %> prohibited this round from being saved:</h2>
+      <ul>
+      <% @round.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <%= f.fields_for :performances do |p| %>
+  <%= p.object.poet.name %>
+  <div class="field">
+    <%= p.label :score1 %>
+    <%= p.text_field :score1 %>
+  </div>
+  <div class="field">
+    <%= p.label :score2 %>
+    <%= p.text_field :score2 %>
+  </div>
+  <div class="field">
+    <%= p.label :score3 %>
+    <%= p.text_field :score3 %>
+  </div>
+  <div class="field">
+    <%= p.label :score4 %>
+    <%= p.text_field :score4 %>
+  </div>
+  <div class="field">
+    <%= p.label :score5 %>
+    <%= p.text_field :score5 %>
+  </div>
+  <% end %>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', rounds_path %>
