@@ -1,25 +1,14 @@
-<h1>Listing rounds</h1>
-
-<table>
-  <tr>
-    <th>Slam</th>
-    <th>Round number</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="font-effect-anaglyph">All Rounds</div>
 
 <% @rounds.each do |round| %>
-  <tr>
-    <td><%= round.slam_id %></td>
-    <td><%= round.round_number %></td>
-    <td><%= link_to 'Look', round %></td>
-    <td><%= link_to 'Edit', edit_round_path(round) %></td>
-    <td><%= link_to 'Omit', round, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    <div class="font-effect-anaglyph"><p><%= round.slam_id %></p></div>
+    <p>Round # <%= round.round_number %></p>
+    <div class="internal_link"><%= link_to 'Look', round %>
+    <%= link_to 'Edit', edit_round_path(round) %>
+    <%= link_to 'Omit', round, method: :delete, data: { confirm: "Don't do it!" } %></div>
 
-<br />
+  <% end %>
+</div>
+
 
 <div class="bottom_link"><%= link_to 'New Round', new_round_path %></div>

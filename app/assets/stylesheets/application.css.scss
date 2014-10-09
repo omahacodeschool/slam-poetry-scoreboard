@@ -24,6 +24,14 @@ $red: #E32F21;
   margin-top: 10px;
 }
 
+.poet .slam .rounds {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 40px 40px 40px;
+  background-color: $aqua;
+}
+
 .top_link {
   margin-top: 5px;
   float: right;
@@ -59,7 +67,6 @@ p {
   margin-top: 10px;
   text-decoration: none;
   text-transform: uppercase;
-  border-radius: 5%;
   text-align: center;
   background-color: $red;
   width: 80%;
@@ -68,21 +75,13 @@ p {
 
 .photo {
  border-radius: 100%; 
- border: 10px;
- border-color: $red;
  margin: 0 auto;
-}
-
-.poet .slam {
-  text-align: center;
-  width: 80%;
-  margin: 0 auto;
-  background-color: $aqua;
 }
 
 .slam {
   background-color: $seafoam;
   color: $blackish;
+  padding: 10px;
 }
 
 .field {
@@ -98,7 +97,7 @@ p {
   text-align: center;
   background-color: $seafoam;
   color: $blackish;
-  width: 100%;
+  width: 81%;
   margin: 0 auto;
 }
 

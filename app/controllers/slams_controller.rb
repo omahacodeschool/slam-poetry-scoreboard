@@ -25,7 +25,7 @@ class SlamsController < ApplicationController
   # GET /slams/new
   # GET /slams/new.json
   def new
-    @slam = Slam.new
+    @slam = Slam.new(master_id: current_user.id)
 
     respond_to do |format|
       format.html # new.html.erb
