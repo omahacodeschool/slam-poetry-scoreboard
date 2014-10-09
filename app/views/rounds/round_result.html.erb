@@ -12,18 +12,11 @@
     </div>
   <% end %>
 
-<<<<<<< HEAD
-  <% @poets.each do |p| %>
-    <%= check_box_tag "round[poet][]", p.id %>
-    <%= label_tag "round_poet", p.name %>
-    binding.pry
-    <%= label_tag "poet_score", p.performance.normalized_score %>
-=======
+
   <% @round.performances.each do |p| %>
     <%= check_box_tag "round[poet][]", p.poet.id %>
     <%= label_tag "round_poet", p.poet.name %>
     <%= label_tag "poet_score", p.normalized_score %>
->>>>>>> 36306bc2d9733864dbe51241fb99218ed895f314
   <% end %>
   
   <div class="actions">
