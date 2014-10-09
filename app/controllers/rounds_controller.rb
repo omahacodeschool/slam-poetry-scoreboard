@@ -78,15 +78,22 @@ class RoundsController < ApplicationController
   def round_result
     @round = Round.find(params[:id])
     @poets = []
-    
     @round.performances.each do |p|
       @poets << p.poet
     end
+    binding.pry
   end
   
   # Create new round with poets from round_results and render page to add new scores
   def advance_round
     @prevrnd = Round.find(params[:id])
+    
+    if params[:advance_round]
+      binding.pry
+    elsif params[:end_slam]
+      binding.pry
+      redirect_to slam_path(@prevrnd.slam_id)
+    end
     
     @slam = @prevrnd.slam
     @newrnd = @slam.rounds.create(round_number: @prevrnd.round_number.to_i + 1)
