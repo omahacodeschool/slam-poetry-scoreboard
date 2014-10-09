@@ -83,4 +83,8 @@ class SlamsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def slam_final
+    
+  end
 end

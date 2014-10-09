@@ -89,16 +89,12 @@ class RoundsController < ApplicationController
     @prevrnd = Round.find(params[:id])
     
     if params[:advance_round]
-      binding.pry
+      @slam = @prevrnd.slam
+      @newrnd = @slam.rounds.create(round_number: @prevrnd.round_number.to_i + 1)
+
+      @newrnd.assign_poets(params[:round][:poet])
     elsif params[:end_slam]
-      binding.pry
-      redirect_to slam_path(@prevrnd.slam_id)
+      redirect_to slam_final_path(@prevrnd.slam_id)
     end
-    
-    @slam = @prevrnd.slam
-    @newrnd = @slam.rounds.create(round_number: @prevrnd.round_number.to_i + 1)
-
-    @newrnd.assign_poets(params[:round][:poet])    
   end
-
 end
