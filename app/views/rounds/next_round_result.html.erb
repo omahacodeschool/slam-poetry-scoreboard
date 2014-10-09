@@ -1,0 +1,31 @@
+<%= form_for(@newrnd, url: advance_round_path(@newrnd.id)) do |f| %>
+
+  <% if @newrnd.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@newrnd.errors.count, "error") %> prohibited this round from being saved:</h2>
+
+      <ul>
+      <% @newrnd.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% @poets.each do |p| %>
+    <%= check_box_tag "round[poet][]", p.id %>
+    <%= label_tag "round_poet", p.name %>
+    <% binding.pry %>
+    <%= label_tag "poet_score", p.performance.normalized_score %>
+    <% binding.pry %>
+  <% end %>
+  
+  <div class="actions">
+    <%= f.submit 'Advance Round', name: 'advance_round' %>
+    <%= f.submit 'End Slam', name: 'end_slam'%>
+  </div>
+  
+<% end %>
+
+<%= link_to slam_path %>
+  

@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<div class="slam">
+  <div class="font-effect-anaglyph"><%= @slam.name %></div>
+  <p><%= @slam.master %></p>
+  <p><%= @slam.event_date %></p>
+  <p><%= @slam.description %></p>
+  <p>
+</div>
+
+<div class="bottom_link"><%= link_to 'Edit', edit_slam_path(@slam) %></div>
+<div class="bottom_link"><%= link_to 'Back', slams_path %></div>
+
