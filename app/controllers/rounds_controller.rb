@@ -1,5 +1,4 @@
 class RoundsController < ApplicationController
-
   def index
     @rounds = Round.all
 
@@ -27,6 +26,7 @@ class RoundsController < ApplicationController
     end
   end
 
+  # Add poets to initial slam round
   def edit
     @round = Round.find(params[:id])
     @poets = Poet.all
@@ -49,7 +49,7 @@ class RoundsController < ApplicationController
   def update
     @round = Round.find(params[:id])
     @round.assign_poets(params[:round][:poet])
-    redirect_to round_path(@round.id)
+    redirect_to score_path(@round.id)
   end
 
   def destroy

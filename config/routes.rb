@@ -9,10 +9,6 @@ PoetrySlam::Application.routes.draw do
   put 'advance_round/:id' => 'rounds#advance_round', :as => 'advance_round'
   
   root :to => 'slams#new'
-
-  # resources :slams do
-  #   resources :rounds
-  # end
   
   resources :poets, :performances, :rounds, :sessions, :masters, :slams
 
