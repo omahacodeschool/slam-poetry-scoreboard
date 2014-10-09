@@ -2,7 +2,6 @@ class RoundsController < ApplicationController
   # GET /rounds
   # GET /rounds.json
   def index
-    binding.pry
     @rounds = Round.all
 
     respond_to do |format|

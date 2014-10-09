@@ -2,10 +2,10 @@
 
 <div class="poet"><% @poets.each do |poet| %>
     <div class="font-effect-anaglyph"><p><%= poet.name %></p></div>
-    <div class="photo"><%= image_tag poet.photo_url(:thumb) if poet.photo?%></div>
-    <div class="internal_link"><%= link_to 'Show', poet %>
+    <%= image_tag(poet.photo_url(:thumb), class: "photo") if poet.photo?%>
+    <div class="internal_link"><%= link_to 'Look', poet %>
         <%= link_to 'Edit', edit_poet_path(poet) %>
-        <%= link_to 'Destroy', poet, method: :delete, data: { confirm: 'Are you serious?'} %></div>
+        <%= link_to 'Omit', poet, method: :delete, data: { confirm: 'Are you serious?'} %></div>
     <% end %>
 </div>
 

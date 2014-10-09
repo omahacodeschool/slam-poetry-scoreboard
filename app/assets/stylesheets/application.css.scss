@@ -12,14 +12,25 @@ $red: #E32F21;
   color: $blackish;
   padding: 12px;
   width: 100%;
-  border-radius: 10px;
   height: 2000px;
 }
 
 .master_nav {
   color: $red;
   font: $special_font;
-  text-transform: lowercase; 
+  text-transform: lowercase;
+  float: right; 
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.top_link {
+  margin-top: 5px;
+  float: right;
+}
+
+.clear_float {
+  clear: both;
 }
 
 .font-effect-anaglyph {
@@ -39,11 +50,7 @@ h1 {
 p {
   font: 100% $font;
   text-transform: lowercase;
-}
-
-table {
-  background-color: $aqua;
-  width: 100%;
+  text-align: center;
 }
 
 .internal_link {
@@ -55,16 +62,27 @@ table {
   border-radius: 5%;
   text-align: center;
   background-color: $red;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .photo {
  border-radius: 100%; 
  border: 10px;
  border-color: $red;
+ margin: 0 auto;
 }
 
-.poet {
+.poet .slam {
   text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  background-color: $aqua;
+}
+
+.slam {
+  background-color: $seafoam;
+  color: $blackish;
 }
 
 .field {
@@ -72,12 +90,16 @@ table {
   background-color: $red;
   color: $blackish;
   padding: 10px;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .actions {
   text-align: center;
   background-color: $seafoam;
   color: $blackish;
+  width: 100%;
+  margin: 0 auto;
 }
 
 a {
@@ -90,7 +112,6 @@ a {
   border-radius: 100%;
   text-align: center;
   margin: 8px;
-  border: 10px $red;
 }
 
 .bottom_link {
