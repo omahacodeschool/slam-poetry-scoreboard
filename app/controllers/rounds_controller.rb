@@ -75,13 +75,38 @@ class RoundsController < ApplicationController
     end
   end
   
+  # Score Entry
   def score
     @round = Round.find(params[:id])
   end
   
+  # Updates performances for round with scores from score acion
   def save_score
     @round = Round.find(params[:id])
     @round.update_attributes(params[:round])
+  end
+  
+  # Displays poets and scores and adds checkboxes to add poets to next round
+  def round_result
+    # binding.pry
+    @round = Round.find(params[:id])
+    @poets = []
+    
+    @round.performances.each do |p|
+      @poets << p.poet
+    end
+    # @nextround = Round.new(slam_id: @round.slam_id, round_id: (@round.round_number.to_i +1)
+  end
+  
+  # Create new round with poets from round_results and render page to add new scores
+  def advance_round
+    @prevrnd = Round.find(params[:id])
+    
+    @slam = @prevrnd.slam
+    @newrnd = @slam.rounds.create(round_number: @prevrnd.round_number.to_i + 1)
     binding.pry
+    @newrnd.assign_poets(params[:round][:poet])
+    
+    # binding.pry
   end
 end

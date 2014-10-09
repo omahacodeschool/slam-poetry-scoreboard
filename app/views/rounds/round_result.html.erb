@@ -1,0 +1,14 @@
+<%= form_for(@round, url: advance_round_path(@round.id)) do |f| %>
+
+  <% @poets.each do |p| %>
+    <%= check_box_tag "round[poet][]", p.id %>
+    <%= label_tag "round_poet", p.name %>
+    <%= label_tag "poet_score", p.performance.normalized_score %>
+  <% end %>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>
+  
