@@ -1,0 +1,102 @@
+$special_font: Bitter, serif;
+$font: Droid Sans, sans-serif;
+$beige: #E4DED0;
+$seafoam: #ABCCBD;
+$aqua: #7DBEB8;
+$blackish: #181619;
+$red: #E32F21;
+
+
+#container {
+  background-color: $beige;
+  color: $blackish;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  height: 600px;
+}
+
+.notice {
+  color: $blackish;
+  font: $special_font;
+  text-transform: uppercase;
+}
+.alert {
+  color: $red;
+  font: $special_font;
+  text-transform: uppercase;  
+}
+
+.font-effect-anaglyph {
+  font-family: $special_font;
+  font-size: xx-large;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h1 {
+  font-family: $special_font;
+  font-size: xx-large;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font: 100% $font;
+}
+
+table {
+  background-color: $aqua;
+  width: 100%;
+}
+
+table a {
+  font: 75% $special_font;
+  padding: 8px;
+  margin-top: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5%;
+  text-align: center;
+  color: $red;
+}
+
+.photo {
+ border-radius: 100%; 
+}
+
+table .photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.field {
+  text-align: center;
+  background-color: $red;
+  color: $blackish;
+  padding: 10px;
+}
+
+.actions {
+  text-align: center;
+  background-color: $seafoam;
+  color: $blackish;
+}
+a {
+  font: 75% $special_font;
+  padding: 15px;
+  background-color: $blackish;
+  color: $aqua;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 100%;
+  text-align: center;
+  margin: 8px;
+  border: 10px $red;
+}
+
+a:hover {
+  background-color: $aqua;
+  color: $red;
+}

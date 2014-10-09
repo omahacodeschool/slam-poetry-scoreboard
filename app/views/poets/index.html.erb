@@ -1,4 +1,4 @@
-<h1>Listing poets</h1>
+<div class="font-effect-anaglyph">All poets</div>
 
 <table>
   <tr>
@@ -12,7 +12,7 @@
 <% @poets.each do |poet| %>
   <tr>
     <td><%= poet.name %></td>
-    <td><%= poet.photo %></td>
+    <div class="photo"><td><%= image_tag(poet.photo_url) if poet.photo?%></td></div>
     <td><%= link_to 'Show', poet %></td>
     <td><%= link_to 'Edit', edit_poet_path(poet) %></td>
     <td><%= link_to 'Destroy', poet, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,4 +1,4 @@
-<h1>Listing slams</h1>
+<div class="font-effect-anaglyph">Listing slams</div>
 
 <table>
   <tr>
@@ -14,7 +14,7 @@
 <% @slams.each do |slam| %>
   <tr>
     <td><%= slam.master_id %></td>
-    <td><%= slam.name %></td>
+    <div class="font-effect-anaglyph"><td><%= slam.name %></td></div>
     <td><%= slam.event_date %></td>
     <td><%= slam.description %></td>
     <td><%= link_to 'Show', slam %></td>

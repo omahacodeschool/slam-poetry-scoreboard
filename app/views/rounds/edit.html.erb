@@ -1,4 +1,6 @@
-<h1>Add Poets to "<%= @round.slam.name %>'s" First Round</h1>
+<h1>Add Poets to 
+<div class="font-effect-anaglyph"><%= @round.slam.name %>'s</div>
+First Round</h1>
 
 <%= form_for(@round) do |f| %>
   <% if @round.errors.any? %>
