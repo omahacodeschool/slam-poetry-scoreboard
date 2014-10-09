@@ -1,3 +1,4 @@
+<<<<<<< Local Changes
 class RoundsController < ApplicationController
   # GET /rounds
   # GET /rounds.json
@@ -73,7 +74,7 @@ class RoundsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   # Score Entry
   def score
     @round = Round.find(params[:id])
@@ -87,14 +88,13 @@ class RoundsController < ApplicationController
   
   # Displays poets and scores and adds checkboxes to add poets to next round
   def round_result
-    # binding.pry
+
     @round = Round.find(params[:id])
     @poets = []
     
     @round.performances.each do |p|
       @poets << p.poet
     end
-    # @nextround = Round.new(slam_id: @round.slam_id, round_id: (@round.round_number.to_i +1)
   end
   
   # Create new round with poets from round_results and render page to add new scores
@@ -103,9 +103,8 @@ class RoundsController < ApplicationController
     
     @slam = @prevrnd.slam
     @newrnd = @slam.rounds.create(round_number: @prevrnd.round_number.to_i + 1)
-    binding.pry
-    @newrnd.assign_poets(params[:round][:poet])
-    
-    # binding.pry
+
+    @newrnd.assign_poets(params[:round][:poet])    
   end
+
 end
