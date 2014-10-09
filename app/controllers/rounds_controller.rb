@@ -1,3 +1,4 @@
+<<<<<<< Local Changes
 class RoundsController < ApplicationController
   # GET /rounds
   # GET /rounds.json
@@ -73,4 +74,48 @@ class RoundsController < ApplicationController
       format.json { head :no_content }
     end
   end
+<<<<<<< Local Changes
+<<<<<<< Local Changes
+<<<<<<< Local Changes
+
+  # Score Entry
+  def score
+    @round = Round.find(params[:id])
+  end
+  
+  # Updates performances for round with scores from score acion
+  def save_score
+    @round = Round.find(params[:id])
+    @round.update_attributes(params[:round])
+  end
+  
+  # Displays poets and scores and adds checkboxes to add poets to next round
+  def round_result
+    # binding.pry
+    @round = Round.find(params[:id])
+    @poets = []
+    
+    @round.performances.each do |p|
+      @poets << p.poet
+    end
+  end
+  
+  # Create new round with poets from round_results and render page to add new scores
+  def advance_round
+    @prevrnd = Round.find(params[:id])
+    
+    @slam = @prevrnd.slam
+    @newrnd = @slam.rounds.create(round_number: @prevrnd.round_number.to_i + 1)
+    @newrnd.assign_poets(params[:round][:poet])
+    
+  end
+
+=======
+>>>>>>> External Changes
+=======
+>>>>>>> External Changes
+=======
+>>>>>>> External Changes
 end
+=======
+>>>>>>> External Changes
