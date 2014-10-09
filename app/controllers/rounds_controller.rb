@@ -77,11 +77,6 @@ class RoundsController < ApplicationController
   # Displays poets and scores and adds checkboxes to add poets to next round
   def round_result
     @round = Round.find(params[:id])
-    @poets = []
-    @round.performances.each do |p|
-      @poets << p.poet
-    end
-    binding.pry
   end
   
   # Create new round with poets from round_results and render page to add new scores
@@ -89,10 +84,16 @@ class RoundsController < ApplicationController
     @prevrnd = Round.find(params[:id])
     
     if params[:advance_round]
+      @poets = []
+   
       @slam = @prevrnd.slam
       @newrnd = @slam.rounds.create(round_number: @prevrnd.round_number.to_i + 1)
-
       @newrnd.assign_poets(params[:round][:poet])
+      
+      @newrnd.performances.each do |p|
+        @poets << p.poet
+      end
+      redirect_to score_path(@newrnd.id)
     elsif params[:end_slam]
       redirect_to slam_final_path(@prevrnd.slam_id)
     end
