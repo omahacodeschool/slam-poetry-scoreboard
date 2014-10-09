@@ -13,18 +13,13 @@ $red: #E32F21;
   padding: 12px;
   width: 100%;
   border-radius: 10px;
-  height: 600px;
+  height: 2000px;
 }
 
-.notice {
-  color: $blackish;
-  font: $special_font;
-  text-transform: uppercase;
-}
-.alert {
+.master_nav {
   color: $red;
   font: $special_font;
-  text-transform: uppercase;  
+  text-transform: lowercase; 
 }
 
 .font-effect-anaglyph {
@@ -43,6 +38,7 @@ h1 {
 
 p {
   font: 100% $font;
+  text-transform: lowercase;
 }
 
 table {
@@ -50,7 +46,7 @@ table {
   width: 100%;
 }
 
-table a {
+.internal_link {
   font: 75% $special_font;
   padding: 8px;
   margin-top: 10px;
@@ -58,17 +54,17 @@ table a {
   text-transform: uppercase;
   border-radius: 5%;
   text-align: center;
-  color: $red;
+  background-color: $red;
 }
 
 .photo {
  border-radius: 100%; 
+ border: 10px;
+ border-color: $red;
 }
 
-table .photo {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
+.poet {
+  text-align: center;
 }
 
 .field {
@@ -83,6 +79,7 @@ table .photo {
   background-color: $seafoam;
   color: $blackish;
 }
+
 a {
   font: 75% $special_font;
   padding: 15px;
@@ -94,6 +91,11 @@ a {
   text-align: center;
   margin: 8px;
   border: 10px $red;
+}
+
+.bottom_link {
+  margin-bottom: 5px;
+  float: left;
 }
 
 a:hover {

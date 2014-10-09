@@ -1,25 +1,12 @@
 <div class="font-effect-anaglyph">All poets</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Photo</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="poet"><% @poets.each do |poet| %>
+    <div class="font-effect-anaglyph"><p><%= poet.name %></p></div>
+    <div class="photo"><%= image_tag poet.photo_url(:thumb) if poet.photo?%></div>
+    <div class="internal_link"><%= link_to 'Show', poet %>
+        <%= link_to 'Edit', edit_poet_path(poet) %>
+        <%= link_to 'Destroy', poet, method: :delete, data: { confirm: 'Are you serious?'} %></div>
+    <% end %>
+</div>
 
-<% @poets.each do |poet| %>
-  <tr>
-    <td><%= poet.name %></td>
-    <div class="photo"><td><%= image_tag(poet.photo_url) if poet.photo?%></td></div>
-    <td><%= link_to 'Show', poet %></td>
-    <td><%= link_to 'Edit', edit_poet_path(poet) %></td>
-    <td><%= link_to 'Destroy', poet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Poet', new_poet_path %>
+<div class="bottom_link"><%= link_to 'New Poet', new_poet_path %></div>
