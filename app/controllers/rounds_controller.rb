@@ -95,6 +95,8 @@ class RoundsController < ApplicationController
       end
       redirect_to score_path(@newrnd.id)
     elsif params[:end_slam]
+      @slam = @prevrnd.slam
+      @slam.update_attributes(slam_complete: true)
       redirect_to slam_final_path(@prevrnd.slam_id)
     end
   end
