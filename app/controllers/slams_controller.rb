@@ -85,6 +85,6 @@ class SlamsController < ApplicationController
   end
   
   def slam_final
-    
+    @slam = Slam.find(params[:id])
   end
 end
