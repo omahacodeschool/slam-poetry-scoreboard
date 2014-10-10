@@ -1,31 +1,20 @@
-<h1>Add Poets to</h1>
-<div class="font-effect-anaglyph"><%= @round.slam.name %>'s</div>
-<h1>First Round</h1>
+<div class="font-effect-anaglyph">Add Poets to<%= @round.slam.name %>'s First Round</div>
 
-<div class="round"><%= form_for(@round) do |f| %>
-  <% if @round.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@round.errors.count, "error") %> prohibited this round from being saved:</h2>
-
-      <ul>
-      <% @round.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+<div class="form_field">
+  <div class="round">
+    <% form_for(@round) do |f| %>
+      <% @poets.each do |p| %>
+       <div class="poet">
+         <p><%= label_tag "round_poet", p.name %></p>   
+         <%= image_tag(p.photo_url(:thumb), class: "photo") if p.photo? %>
+         <%= check_box_tag "round[poet][]", p.id %>
+       </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-  
-  <% @poets.each do |p| %>
-<div class="poet">
-  <p><%= label_tag "round_poet", p.name %></p>   
-  <%= image_tag(p.photo_url(:thumb), class: "photo") if p.photo? %>
-  <%= check_box_tag "round[poet][]", p.id %>
-</div>
- <% end %>
-  <div class="actions">
-    <%= f.submit %>
+      <div class="actions">
+       <%= f.submit %>
+      </div>
+   <% end %>
   </div>
-  <% end %>
 </div>
 
 <div class="bottom_link"><%= link_to 'Back', rounds_path %></div>

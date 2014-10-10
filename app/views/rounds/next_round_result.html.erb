@@ -1,31 +1,18 @@
 <div class="font-effect-anaglyph">Round Results</div>
 <p>Check Poets to Advance to the Next Round</p>
-<%= form_for(@newrnd, url: advance_round_path(@newrnd.id)) do |f| %>
-
-  <% if @newrnd.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@newrnd.errors.count, "error") %> prohibited this round from being saved:</h2>
-
-      <ul>
-      <% @newrnd.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<div class="form_field">
+  <%= form_for(@newrnd, url: advance_round_path(@newrnd.id)) do |f| %>
+    <% @poets.each do |p| %>
+      <%= check_box_tag "round[poet][]", p.id, class: 'roundedTwo' %>
+      <%= label_tag "round_poet", p.name %>
+      <%= label_tag "poet_score", p.performance.normalized_score %>
+    <% end %>
+    <div class="actions">
+      <%= f.submit 'Advance Round', name: 'advance_round' %>
+      <%= f.submit 'End Slam', name: 'end_slam'%>
     </div>
   <% end %>
-
-  <% @poets.each do |p| %>
-    <%= check_box_tag "round[poet][]", p.id, class: 'roundedTwo' %>
-    <%= label_tag "round_poet", p.name %>
-    <%= label_tag "poet_score", p.performance.normalized_score %>
-  <% end %>
-  
-  <div class="actions">
-    <%= f.submit 'Advance Round', name: 'advance_round' %>
-    <%= f.submit 'End Slam', name: 'end_slam'%>
-  </div>
-  
-<% end %>
+</div>
 
 <div class="bottom_link"><%= link_to "slam", slam_path %></div>
   
