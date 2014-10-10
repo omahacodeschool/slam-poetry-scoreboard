@@ -14,17 +14,17 @@
     </div>
   <% end %>
 
-<div id='round_scores'>
-  <% @round.performances.each do |p| %>
-  <div class="advance_poet">
-    <p data-poet-score='<%= p.normalized_score %>'>
-      <%= check_box_tag "round[poet][]", p.poet.id %>
-      <%= label_tag p.poet.name %>
-      <%= label_tag "poet_score", p.normalized_score %>
-    </p>
+  <div id='round_scores'>
+    <% @round.performances.each do |p| %>
+    <div class="advance_poet">
+      <p data-poet-score='<%= p.normalized_score %>'>
+        <%= check_box_tag "round[poet][]", p.poet.id %>
+        <%= label_tag p.poet.name %>
+        <%= label_tag "poet_score", p.normalized_score %>
+      </p>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
   
   <div class="actions">
     <%= f.submit 'Advance Round', name: 'advance_round' %>
