@@ -8,8 +8,8 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 <div id="container">
+<body>
   <div class="master_nav">
    <% if current_user %>
      Logged in as <%= current_user.email %>.
@@ -26,6 +26,6 @@
     <% end %>
     <%= yield %>
   </div>
-</div>
 </body>
+</div>
 </html>

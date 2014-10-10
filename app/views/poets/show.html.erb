@@ -2,7 +2,7 @@
 
 <div class="poet">
   <div class="font-effect-anaglyph"><%= @poet.name %></div>
-  <%=image_tag @poet.photo_url if @poet.photo? %>
+  <%= image_tag(@poet.photo_url(:thumb), class: "photo") if @poet.photo?%>
 </div>
 
 <div class="bottom_link"><%= link_to 'Edit', edit_poet_path(@poet) %></div> 

@@ -41,10 +41,11 @@ class SlamsController < ApplicationController
   # POST /slams
   # POST /slams.json
   def create
-    @slam = Slam.new(params[:slam], master_id: current_user.id)
+    @slam = Slam.new(params[:slam])
 
     respond_to do |format|
       if @slam.save
+        @slam.update_attributes(master_id: current_user.id)
         @round1 = Round.create(round_number: 1, slam_id: @slam.id)
         
         format.html { redirect_to edit_round_path(@round1), notice: 'Get to it!' }

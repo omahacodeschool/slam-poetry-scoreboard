@@ -2,9 +2,10 @@
 
 <div class="slam">
   <div class="font-effect-anaglyph"><%= @slam.name %></div>
-  <p><%= @slam.master_id %></p>
+  <p><%= @slam.master.email %></p>
   <p><%= @slam.event_date %></p>
   <p><%= @slam.description %></p>
+  <div class="font-effect-anaglyph">Top poets from the final round:</div>
   <% @slam.top_poets.each do |name, score| %>
   <p>
     <%= name %>
@@ -13,6 +14,5 @@
   <% end %>
 </div>
 
-<div class="bottom_link"><%= link_to 'Edit', edit_slam_path(@slam) %></div>
 <div class="bottom_link"><%= link_to 'Back', slams_path %></div>
 

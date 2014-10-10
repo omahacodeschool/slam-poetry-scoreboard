@@ -11,18 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
+<div class="form_field">
+    <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.file_field :photo %><br />
-  </div>
-  <div class="field">
-    <%= f.label :remote_photo_url, "or photo URL" %><br />
-    <%= f.text_field :remote_photo_url %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    </div>
+    <div class="field">
+      <%= f.file_field :photo %><br />
+    </div>
+    <div class="field">
+      <%= f.label :remote_photo_url, "or photo URL" %><br />
+      <%= f.text_field :remote_photo_url %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+</div>
 <% end %>
