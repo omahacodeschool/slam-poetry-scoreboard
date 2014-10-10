@@ -9,6 +9,10 @@ PoetrySlam::Application.routes.draw do
   put 'advance_round/:id' => 'rounds#advance_round', :as => 'advance_round'
   
   get 'slam_final/:id' => 'slams#slam_final', :as => 'slam_final'
+  
+  get 'new_poet_for_round/:id' => 'poets#add_poet', :as => 'add_poet'
+  post 'new_poet_for_round/:id' => 'poets#save_poet_for_round'
+    
   root :to => 'slams#new'
   
   resources :poets, :performances, :rounds, :sessions, :masters, :slams

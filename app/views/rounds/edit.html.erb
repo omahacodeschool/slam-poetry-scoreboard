@@ -4,11 +4,11 @@
   <div class="round">
     <% form_for(@round) do |f| %>
       <% @poets.each do |p| %>
-       <div class="poet">
-         <p><%= label_tag "round_poet", p.name %></p>   
-         <%= image_tag(p.photo_url(:thumb), class: "photo") if p.photo? %>
-         <%= check_box_tag "round[poet][]", p.id %>
-       </div>
+         <div class="poet">
+           <p><%= label_tag "round_poet", p.name %></p>   
+           <%= image_tag(p.photo_url(:thumb), class: "photo") if p.photo? %>
+           <%= check_box_tag "round[poet][]", p.id %>
+         </div>
       <% end %>
       <div class="actions">
        <%= f.submit %>
@@ -18,5 +18,5 @@
 </div>
 
 <div class="bottom_link"><%= link_to 'Back', rounds_path %></div>
-<div class="bottom_link"><%= link_to 'New Poet', new_poet_path %></div>
+<div class="bottom_link"><%= link_to 'New Poet', add_poet_path(@round.id) %></div>
 
