@@ -1,12 +1,11 @@
 <div class="font-effect-anaglyph">Slam List</div>
 
-<div class="slam"><% @slams.each do |slam| %>
+<div class="slam">
+  <% @slams.each do |slam| %>
     <div class="font-effect-anaglyph"><p><%= slam.name %></p></div>
     <p><%= slam.event_date %></p>
     <p><%= slam.description %></p>
-    <div class="internal_link"><%= link_to 'Look', slam %>
-      <%= link_to 'Edit', edit_slam_path(slam) %>
-      <%= link_to 'Omit', slam, method: :delete, data: { confirm: 'Are you fucking kidding?' } %></div>
+    <div class="internal_link"><%= link_to 'Look', slam %></div>
   <% end %>
 </div>
 

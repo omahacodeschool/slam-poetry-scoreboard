@@ -1,17 +1,5 @@
-<%= form_for(@slam) do |f| %>
-  <% if @slam.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@slam.errors.count, "error") %> prohibited this slam from being saved:</h2>
-
-      <ul>
-      <% @slam.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
 <div class="form_field"> 
+  <%= form_for(@slam) do |f| %>
    <div class="field">
      <%= f.label :event_name %><br />
      <%= f.text_field :name %>
@@ -27,5 +15,5 @@
    <div class="actions">
      <%= f.submit %>
    </div>
+  <% end %>
 </div>
-<% end %>

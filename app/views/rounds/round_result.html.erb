@@ -1,34 +1,21 @@
 <div class="font-effect-anaglyph">Round Result</div>
 
-<%= form_for(@round, url: advance_round_path(@round.id)) do |f| %>
-
-  <% if @round.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@round.errors.count, "error") %> prohibited this round from being saved:</h2>
-
-      <ul>
-      <% @round.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<div class="form_field">
+  <%= form_for(@round, url: advance_round_path(@round.id)) do |f| %>
+    <% @round.performances.each do |p| %>
+      <div class="advance_poet">
+        <div class="poets"><%= label_tag p.poet.name %></div>
+        <p data-poet-score='<%= p.normalized_score %>'><%= label_tag "poet_score", p.normalized_score %></p>
+        <%= image_tag(p.poet.photo_url(:thumb), class: "photo") if p.poet.photo? %>
+        <p><%= check_box_tag "round[poet][]", p.poet.id %></p>
+      </div>
+    <% end %>
+    <div class="actions">
+      <%= f.submit 'Advance Round', name: 'advance_round' %>
+      <%= f.submit 'End Slam', name: 'end_slam'%>
     </div>
   <% end %>
-
-
-  <% @round.performances.each do |p| %>
-<div class="advance_poet">
-  <p><%= check_box_tag "round[poet][]", p.poet.id %></p>
-  <div class="poets"><%= label_tag p.poet.name %></div>
-  <p data-poet-score='<%= p.normalized_score %>'><%= label_tag "poet_score", p.normalized_score %></p>
 </div>
-  <% end %>
-  
-  <div class="actions">
-    <%= f.submit 'Advance Round', name: 'advance_round' %>
-    <%= f.submit 'End Slam', name: 'end_slam'%>
-  </div>
-  
-<% end %>
 
 <div class="bottom_link"><%= link_to "slam", slam_path %></div>
   
