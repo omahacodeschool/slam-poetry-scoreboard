@@ -18,7 +18,7 @@
   <% @round.performances.each do |p| %>
 <div class="advance_poet">
   <p><%= check_box_tag "round[poet][]", p.poet.id %></p>
-  <div class="poets"><%= label_tag "round_poet", p.poet.name %></div>
+  <div class="poets"><%= label_tag "round_poet" %></div>
   <p><%= label_tag "poet_score", p.normalized_score %></p>
 </div>
   <% end %>

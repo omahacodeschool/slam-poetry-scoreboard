@@ -16,11 +16,12 @@
   <% end %>
   
   <% @poets.each do |p| %>
-<div class="poet">   <%= check_box_tag "round[poet][]", p.id %>
-   <p><%= label_tag "round_poet", p.name %></p>
-   <%= image_tag(p.photo_url(:thumb), class: "photo") if p.photo? %></div>
+<div class="poet">
+  <p><%= label_tag "round_poet", p.name %></p>   
+  <%= image_tag(p.photo_url(:thumb), class: "photo") if p.photo? %>
+  <%= check_box_tag "round[poet][]", p.id %>
+</div>
  <% end %>
-  
   <div class="actions">
     <%= f.submit %>
   </div>
