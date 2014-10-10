@@ -1,5 +1,6 @@
 $( document ).ready(function(){
-  $('#content').find('.advance_poet').sort(function (a, b) {
-    return $(a).attr('data-poet-score') - $(b).attr('data-poet-score');
-  });
+  $("#round_scores p").sort(sort_li).appendTo('#round_scores');
+  function sort_li(a, b){
+      return ($(b).data('poet-score')) > ($(a).data('poet-score')) ? 1 : -1;    
+  }
 });
