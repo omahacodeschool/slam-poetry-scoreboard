@@ -5,10 +5,10 @@
   <p><%= @slam.master_id %></p>
   <p><%= @slam.event_date %></p>
   <p><%= @slam.description %></p>
-  <% @slam.top_poets.each do |n, s| %>
+  <% @slam.top_poets.each do |name, score| %>
   <p>
-    <%= n %>
-    <%= s %>
+    <%= name %>
+    <%= score %>
   </p>
   <% end %>
 </div>
