@@ -19,7 +19,7 @@
 <div class="advance_poet">
   <p><%= check_box_tag "round[poet][]", p.poet.id %></p>
   <div class="poets"><%= label_tag p.poet.name %></div>
-  <p><%= label_tag "poet_score", p.normalized_score %></p>
+  <p data-poet-score='<%= p.normalized_score %>'><%= label_tag "poet_score", p.normalized_score %></p>
 </div>
   <% end %>
   
