@@ -37,7 +37,7 @@ class RoundsController < ApplicationController
 
     respond_to do |format|
       if @round.save
-        format.html { redirect_to @round, notice: 'Round was successfully created.' }
+        format.html { redirect_to @round, notice: 'Somebody speak!' }
         format.json { render json: @round, status: :created, location: @round }
       else
         format.html { render action: "new" }

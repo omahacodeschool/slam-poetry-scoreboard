@@ -8,7 +8,7 @@ class MastersController < ApplicationController
   def create
     @master = Master.new(params[:master])
     if @master.save
-      redirect_to root_path, :notice => "Signed up!"
+      redirect_to root_path, :notice => "You're in!"
     else
       render :new
     end

@@ -1,3 +1,5 @@
+<div class="font-effect-anaglyph">Round Results</div>
+<p>Check Poets to Advance to the Next Round</p>
 <%= form_for(@newrnd, url: advance_round_path(@newrnd.id)) do |f| %>
 
   <% if @newrnd.errors.any? %>
@@ -15,9 +17,7 @@
   <% @poets.each do |p| %>
     <%= check_box_tag "round[poet][]", p.id %>
     <%= label_tag "round_poet", p.name %>
-    <% binding.pry %>
     <%= label_tag "poet_score", p.performance.normalized_score %>
-    <% binding.pry %>
   <% end %>
   
   <div class="actions">
@@ -27,5 +27,5 @@
   
 <% end %>
 
-<%= link_to slam_path %>
+<div class="bottom_link"><%= link_to "slam", slam_path %></div>
   

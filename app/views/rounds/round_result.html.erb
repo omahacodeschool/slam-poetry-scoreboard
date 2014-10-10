@@ -1,3 +1,5 @@
+<div class="font-effect-anaglyph">Round Result</div>
+
 <%= form_for(@round, url: advance_round_path(@round.id)) do |f| %>
 
   <% if @round.errors.any? %>
@@ -14,9 +16,11 @@
 
 
   <% @round.performances.each do |p| %>
-    <%= check_box_tag "round[poet][]", p.poet.id %>
-    <%= label_tag "round_poet", p.poet.name %>
-    <%= label_tag "poet_score", p.normalized_score %>
+<div class="advance_poet">
+  <p><%= check_box_tag "round[poet][]", p.poet.id %></p>
+  <div class="poets"><%= label_tag "round_poet", p.poet.name %></div>
+  <p><%= label_tag "poet_score", p.normalized_score %></p>
+</div>
   <% end %>
   
   <div class="actions">
@@ -26,5 +30,5 @@
   
 <% end %>
 
-<%= link_to slam_path %>
+<div class="bottom_link"><%= link_to "slam", slam_path %></div>
   

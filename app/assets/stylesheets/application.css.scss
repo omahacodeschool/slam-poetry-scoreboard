@@ -1,5 +1,5 @@
-$special_font: Bitter, serif;
-$font: Droid Sans, sans-serif;
+$special_font: 'Bitter', serif;
+$font: 'Droid Sans', sans-serif;
 $beige: #E4DED0;
 $seafoam: #ABCCBD;
 $aqua: #7DBEB8;
@@ -21,20 +21,48 @@ $red: #E32F21;
   text-transform: lowercase;
   float: right; 
   margin-right: 10px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
-.poet .slam .rounds {
+#error_explanation {
+  font: 100% $font;
+  text-transform: lowercase;
+  color: $red;
+}
+
+#content p {
+  font: 100% $font;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.poet .slam .round {
   text-align: center;
   width: 80%;
   margin: 0 auto;
-  padding: 40px 40px 40px 40px;
+  padding: 40px;
   background-color: $aqua;
-  float: left;
+}
+
+.advance_poets {
+  background-color: $aqua;
+  border-radius: 100%;
+}
+
+.poets {
+  font-family: $special_font;
+  font-size: x-large;
+  color: $red;
+  text-align: center;
+}
+
+.round {
+  background-color: $aqua;
 }
 
 .top_link {
-  margin-top: 20px;
+  margin-top: 6px;
+  font-size: 25%;
   float: right;
 }
 
@@ -50,16 +78,10 @@ $red: #E32F21;
   text-align: center;
 }
 
-h1 {
-  font-family: $special_font;
-  font-size: xx-large;
+#content h1 {
+  font-family: $font;
+  font-size: x-large;
   text-transform: uppercase;
-  text-align: center;
-}
-
-p {
-  font: 100% $font;
-  text-transform: lowercase;
   text-align: center;
 }
 
@@ -78,17 +100,22 @@ p {
 .photo {
  border-radius: 100%; 
  margin: 0 auto;
+ border: 5px solid $blackish;
 }
 
 .slam {
   background-color: $seafoam;
   color: $blackish;
   padding: 10px;
+  margin-top: 20px;
 }
 
 .field {
   text-align: center;
   background-color: $red;
+  font-family: $font;
+  text-transform: lowercase;
+  font-size: x-large;
   color: $blackish;
   padding: 10px;
   width: 80%;
@@ -104,13 +131,14 @@ p {
 }
 
 a {
-  font: 75% $special_font;
+  font: 95% $special_font;
   padding: 15px;
   background-color: $blackish;
   color: $aqua;
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 100%;
+  border: 5px solid $aqua;
   text-align: center;
   margin: 8px;
 }
@@ -122,5 +150,6 @@ a {
 
 a:hover {
   background-color: $aqua;
+  border: 5px solid $blackish;
   color: $red;
 }

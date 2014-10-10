@@ -1,8 +1,8 @@
-<h1>Add Poets to 
+<h1>Add Poets to</h1>
 <div class="font-effect-anaglyph"><%= @round.slam.name %>'s</div>
-First Round</h1>
+<h1>First Round</h1>
 
-<%= form_for(@round) do |f| %>
+<div class="round"><%= form_for(@round) do |f| %>
   <% if @round.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@round.errors.count, "error") %> prohibited this round from being saved:</h2>
@@ -16,14 +16,16 @@ First Round</h1>
   <% end %>
   
   <% @poets.each do |p| %>
-    <%= check_box_tag "round[poet][]", p.id %>
-    <%= label_tag "round_poet", p.name %>
-  <% end %>
+<div class="poet">   <%= check_box_tag "round[poet][]", p.id %>
+   <p><%= label_tag "round_poet", p.name %></p>
+   <%= image_tag(p.photo_url(:thumb), class: "photo") if p.photo? %></div>
+ <% end %>
   
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+  <% end %>
+</div>
 
 <div class="bottom_link"><%= link_to 'Show', @round %></div>
 <div class="bottom_link"><%= link_to 'Back', rounds_path %></div>

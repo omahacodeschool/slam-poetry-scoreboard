@@ -49,7 +49,7 @@ class PoetsController < ApplicationController
 
     respond_to do |format|
       if @poet.save
-        format.html { redirect_to @poet, notice: 'Poet was successfully created.' }
+        format.html { redirect_to @poet, notice: 'Yay, new poet!' }
         format.json { render json: @poet, status: :created, location: @poet }
       else
         format.html { render action: "new" }
@@ -65,7 +65,7 @@ class PoetsController < ApplicationController
 
     respond_to do |format|
       if @poet.update_attributes(params[:poet])
-        format.html { redirect_to @poet, notice: 'Poet was successfully updated.' }
+        format.html { redirect_to @poet, notice: 'Allright, poet is fixed.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

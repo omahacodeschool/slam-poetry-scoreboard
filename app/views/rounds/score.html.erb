@@ -11,7 +11,7 @@
   <% end %>
   
   <%= f.fields_for :performances do |p| %>
-  <%= p.object.poet.name %>
+<div class="font-effect-anaglyph"><p><%= p.object.poet.name %></p></div>
   <div class="field">
     <%= p.label :score1 %>
     <%= p.text_field :score1 %>
