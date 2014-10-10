@@ -1,3 +1,5 @@
+<div class="font-effect-anaglyph"><%= @round.slam.name %>, Round: <%= @round.round_number %></div>
+
 <%= form_for(@round, url: save_score_path(@round.id)) do |f| %>
   <% if @round.errors.any? %>
     <div id="error_explanation">
@@ -12,7 +14,7 @@
   
   <%= f.fields_for :performances do |p| %>
 <div class="font-effect-anaglyph"><p><%= p.object.poet.name %></p></div>
-  <div class="field">
+<div class="form_field">  <div class="field">
     <%= p.label :score1 %>
     <%= p.text_field :score1 %>
   </div>
@@ -31,7 +33,7 @@
   <div class="field">
     <%= p.label :score5 %>
     <%= p.text_field :score5 %>
-  </div>
+  </div></div>
   <% end %>
   
   <div class="actions">
