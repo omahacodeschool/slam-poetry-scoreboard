@@ -2,22 +2,19 @@
 
 <div class="form_field">
   <%= form_for(@round, url: advance_round_path(@round.id)) do |f| %>
+  <div id='round_scores'>
     <% @round.performances.each do |p| %>
-      <div id='round_scores'>
-        <% @round.performances.each do |p| %>
-          <div class="advance_poet">
-            <p data-poet-score='<%= p.normalized_score %>'>
-            <%= check_box_tag "round[poet][]", p.poet.id %>
-            <%= label_tag p.poet.name %>
-            <%= label_tag "poet_score", p.normalized_score %>
-            </p>
-          </div>
-        <% end %>
-      </div>
-    <div class="actions">
-      <%= f.submit 'Advance Round', name: 'advance_round' %>
-      <%= f.submit 'End Slam', name: 'end_slam'%>
-    </div>
+      <p data-poet-score='<%= p.normalized_score %>'>
+        <%= check_box_tag "round[poet][]", p.poet.id %>
+        <%= label_tag p.poet.name %>
+        <%= label_tag "poet_score", p.normalized_score %>
+      </p>
+      <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Advance Round', name: 'advance_round' %>
+    <%= f.submit 'End Slam', name: 'end_slam'%>
+  </div>
   <% end %>
 </div>
 

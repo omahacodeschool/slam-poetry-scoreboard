@@ -29,6 +29,7 @@ class PoetsController < ApplicationController
   # GET /poets/new
   # GET /poets/new.json
   def new
+    @round = Round.new(params[:id])
     @poet = Poet.new
 
     respond_to do |format|
@@ -83,6 +84,21 @@ class PoetsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to poets_url }
       format.json { head :no_content }
+    end
+  end
+  
+  def add_poet
+    @poet = Poet.new
+    @round = Round.find(params[:id])
+  end
+  
+  def save_poet_for_round
+    @poet = Poet.new
+    @round = Round.find(params[:id])
+    if @poet.save
+      redirect_to round_edit(@round.id)
+    else
+      render 'add_poet'
     end
   end
 end
