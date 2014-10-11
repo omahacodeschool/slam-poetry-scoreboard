@@ -3,7 +3,7 @@
 <div class="form_field"> 
   <%= form_for(@round, url: save_score_path(@round.id)) do |f| %>
     <%= f.fields_for :performances do |p| %>
-      <div class="font-effect-anaglyph"><p><%= p.object.poet.name %></p></div>
+      <div class="font-effect-anaglyph"><p><%= p.poet.name %></p></div>
       <div class="field">
       <%= p.label :score1 %>
       <%= p.text_field :score1 %>

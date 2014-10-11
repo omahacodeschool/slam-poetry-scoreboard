@@ -1,5 +1,6 @@
 <div class="font-effect-anaglyph">Round Results</div>
 <p>Check Poets to Advance to the Next Round</p>
+
 <div class="form_field">
   <%= form_for(@newrnd, url: advance_round_path(@newrnd.id)) do |f| %>
     <% @poets.each do |p| %>
