@@ -36,6 +36,11 @@ $red: #E32F21;
   color: $red;
 }
 
+#notice {
+  float: left;
+  color: $red;
+}
+
 #content p {
   font: 30px $font;
   text-transform: lowercase;

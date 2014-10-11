@@ -13,9 +13,9 @@
        <%= score %>
      </p>
     <% end %>
-   <div class="font-effect-anaglyph">All poets involved:</div>
+   <div class="font-effect-anaglyph">All Poets Involved</div>
     <% @slam.rounds.each do |r| %>
-      <p><%= r.round_number %></p>
+      <div class="font-effect-anaglyph"><p> Round <%= r.round_number %> Results:</p></div>
       <% r.performances.each do |p| %>
         <p><%= p.poet.name %></p>
         <p><%= p.normalized_score %></p>
@@ -24,5 +24,5 @@
   </div>
 </div>
 
-<div class="bottom_link"><%= link_to 'Back', slams_path %></div>
+<div class="bottom_link"><%= link_to 'All Slams', slams_path %></div>
 
