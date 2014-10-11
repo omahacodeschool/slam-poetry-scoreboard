@@ -1,7 +1,7 @@
 <div class="font-effect-anaglyph">Add Poets to <%= @round.slam.name %>'s First Round</div>
 
 <div class="form_field">
-    <%= form_for(@round, url: score_path(@round.id)) do |f| %>
+    <%= form_for @round do |f| %>
       <% @poets.each do |p| %>
         <p><%= check_box_tag "round[poet][]", p.id, class: 'roundedTwo' %></p>
         <p><%= label_tag "round_poet", p.name %></p>
