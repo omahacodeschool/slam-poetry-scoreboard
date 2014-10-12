@@ -17,8 +17,15 @@ $red: #E32F21;
 
 #content {
   margin: 0 auto;
-  width: 410px;
-  height: 10000px;
+  width: 80%;
+  height: 1000px;
+}
+
+.each_poet {
+  display: block;
+  float: left;
+  width: 250px;
+  padding: 10px;
 }
 
 .master_nav {
@@ -53,6 +60,7 @@ $red: #E32F21;
   padding: 10px;
   background-color: $aqua;
   border-radius: 10px;
+  height: 90%;
 }
 
 .advance_poets {
@@ -197,6 +205,27 @@ a:hover {
   color: $red;
 }
 
+//phones
+//@media only screen and (max-width : 320px) and (max-device-width : 480px) {
+//  .each_poets {
+//    width: 100%;
+//    height: auto;
+//    margin:;
+//  }
+//}
+//
+////tablets
+//@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+//  .each_poets {
+//    width: 44.8%;
+//  }
+//}
+//
+////computers
+//@media only screen  and (min-width : 1224px) {
+//  width: 28.2%;
+//  height: 400px;
+//}
 //.roundedTwo {
 //  width: 28px;
 //  height: 28px;

@@ -1,10 +1,12 @@
 <div class="font-effect-anaglyph">All poets</div>
 
-<div class="poet">
-  <% @poets.each do |poet| %>
-    <div class="font-effect-anaglyph"><p><%= poet.name %></p></div>
-    <%= image_tag(poet.photo_url(:thumb), class: "photo") if poet.photo?%>
-    <div class="internal_link"><%= link_to 'Look', poet %></div>
+<div class="poet clearfloat">
+  <% @poets.each do |poet| %>  
+    <div class="each_poet">
+      <div class="font-effect-anaglyph"><p><%= poet.name %></p></div>
+      <%= image_tag(poet.photo_url(:thumb), class: "photo") if poet.photo?%>
+      <div class="internal_link"><%= link_to 'Look', poet %></div>
+    </div>
   <% end %>
 </div>
 
