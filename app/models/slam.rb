@@ -13,6 +13,8 @@ class Slam < ActiveRecord::Base
   end
   
   # Method to make new round with previous round id incremented by one
+  #
+  # Returns a new Round object
   def new_round(prev_round)
     self.rounds.create(round_number: prev_round.round_number.to_i + 1)
   end
