@@ -8,21 +8,21 @@
   <div class="font-effect-anaglyph">Top poets from the final round:</div>
   <div class='slam_final'>
     <% @slam.top_poets.each do |name, score| %>
-     <p data-poet-score=<%=score%>>
+     <p data-poet-score="<%=score%>">
        <%= name %>
        <%= score %>
      </p>
     <% end %>
-   <div class="font-effect-anaglyph">All poets involved:</div>
+   <div class="font-effect-anaglyph">All Poets Involved</div>
     <% @slam.rounds.each do |r| %>
-      <p><%= r.round_number %></p>
-      <%= r.performances.each do |p| %>
+      <div class="font-effect-anaglyph"><p> Round <%= r.round_number %> Results:</p></div>
+      <% r.performances.each do |p| %>
         <p><%= p.poet.name %></p>
-        <p><%= p.poet.normalized_score %></p>
+        <p><%= p.normalized_score %></p>
       <% end %>
     <% end %>
   </div>
 </div>
 
-<div class="bottom_link"><%= link_to 'Back', slams_path %></div>
+<div class="bottom_link"><%= link_to 'All Slams', slams_path %></div>
 

@@ -15,6 +15,7 @@ class SlamsController < ApplicationController
   # GET /slams/1.json
   def show
     @slam = Slam.find(params[:id])
+    @round1 = Round.create(round_number: 1, slam_id: @slam.id)
 
     respond_to do |format|
       format.html # show.html.erb

@@ -2,6 +2,7 @@ class Performance < ActiveRecord::Base
   belongs_to :poet
   belongs_to :round 
   attr_accessible :poet_id, :round_id, :score1, :score2, :score3, :score4, :score5
+  # validates :score1, numericality: { greater_than: 0, less_than: 10.1 }
   
   def normalized_score
     score_array = [self.score1, self.score2, self.score3, self.score4, self.score5]

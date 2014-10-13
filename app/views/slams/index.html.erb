@@ -4,8 +4,11 @@
   <% @slams.each do |slam| %>
     <div class="font-effect-anaglyph"><p><%= slam.name %></p></div>
     <p><%= slam.event_date %></p>
-    <p><%= slam.description %></p>
-    <div class="internal_link"><%= link_to 'Look', slam %></div>
+    <% if slam.slam_complete == true %>
+      <div class="internal_link"><%= link_to 'Results', slam_final_path(slam.id) %></div>
+    <% else %>
+      <div class="internal_link"><%= link_to 'Look', slam_path(slam.id) %></div>
+    <% end %>
   <% end %>
 </div>
 

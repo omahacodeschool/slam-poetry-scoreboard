@@ -1,12 +1,16 @@
 <div class="poet">
   <div class="font-effect-anaglyph"><%= @poet.name %></div>
   <%= image_tag(@poet.photo_url(:thumb), class: "photo") if @poet.photo?%>
-  <% @poet.performances.each do |p| %>
-    <h1><%= p.round.slam.name %></h1>
-    <p><%= p.round.round_number %></p>
-    <p><%= p.normalized_score %></p>
-  <% end %>
+  <div class="font-effect-anaglyph"><p>Slam record</p></div>
+  <poets><% @poet.performances.each do |p| %>
+        <h1><%= p.round.slam.name %></h1>
+        <p><%= p.round.slam.master.email %></p>
+        <p>Round <%= p.round.round_number %></p>
+        <p><%= p.normalized_score %></p>
+        <p><%= p.score1 %>|<%= p.score2 %>|<%= p.score3 %>|<%= p.score4 %>|<%= p.score5 %></p>
+    <% end %>
+  </poets>
 </div>
 
 <div class="bottom_link"><%= link_to 'Edit', edit_poet_path(@poet) %></div> 
-<div class="bottom_link"><%= link_to 'Back', poets_path %></div>
+<div class="bottom_link"><%= link_to 'All Poets', poets_path %></div>

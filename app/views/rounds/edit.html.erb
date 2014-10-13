@@ -1,22 +1,17 @@
-<div class="font-effect-anaglyph">Add Poets to<%= @round.slam.name %>'s First Round</div>
+<div class="font-effect-anaglyph">Add Poets to <%= @round.slam.name %>'s First Round</div>
 
 <div class="form_field">
-  <div class="round">
-    <% form_for(@round) do |f| %>
+    <%= form_for @round do |f| %>
       <% @poets.each do |p| %>
-         <div class="poet">
-           <p><%= label_tag "round_poet", p.name %></p>   
-           <%= image_tag(p.photo_url(:thumb), class: "photo") if p.photo? %>
-           <%= check_box_tag "round[poet][]", p.id %>
-         </div>
+        <p><%= check_box_tag "round[poet][]", p.id, class: 'roundedTwo' %></p>
+        <p><%= label_tag "round_poet", p.name %></p>
+        <%= image_tag(p.photo_url(:thumb), class: "photo") if p.photo? %>
       <% end %>
       <div class="actions">
-       <%= f.submit %>
+        <%= f.submit %>
       </div>
-   <% end %>
-  </div>
+    <% end %>  
 </div>
 
-<div class="bottom_link"><%= link_to 'Back', rounds_path %></div>
+<div class="bottom_link"><%= link_to 'Slams', slams_path %></div>
 <div class="bottom_link"><%= link_to 'New Poet', add_poet_path(@round.id) %></div>
-

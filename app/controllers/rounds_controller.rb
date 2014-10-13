@@ -1,4 +1,5 @@
 class RoundsController < ApplicationController
+  
   def index
     @rounds = Round.all
 
@@ -67,7 +68,7 @@ class RoundsController < ApplicationController
     @round = Round.find(params[:id])
   end
   
-  # Updates performances for round with scores from score acion
+  # Updates performances for round with scores from score action
   def save_score
     @round = Round.find(params[:id])
     @round.update_attributes(params[:round])
@@ -85,7 +86,6 @@ class RoundsController < ApplicationController
     
     if params[:advance_round]
       @poets = []
-   
       @slam = @prevrnd.slam
       @newrnd.new_round(@prevrnd)
       @newrnd.assign_poets(params[:round][:poet])
