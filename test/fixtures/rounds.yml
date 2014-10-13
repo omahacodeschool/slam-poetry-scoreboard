@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  slam_id: 1
-  round_number: 1
-
-two:
-  slam_id: 1
-  round_number: 1

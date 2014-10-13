@@ -87,7 +87,7 @@ class RoundsController < ApplicationController
       @poets = []
    
       @slam = @prevrnd.slam
-      @newrnd = @slam.rounds.create(round_number: @prevrnd.round_number.to_i + 1)
+      @newrnd.new_round(@prevrnd)
       @newrnd.assign_poets(params[:round][:poet])
       
       @newrnd.performances.each do |p|
